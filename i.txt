@@ -1,0 +1,5 @@
+# Instalación silenciosa de AnyDesk
+$url = "https://github.com/clickinformaticavillaramallo/anydesk/raw/main/AnyDesk.exe"
+$out = "$env:TEMP\AnyDesk.exe"
+Invoke-WebRequest $url -OutFile $out
+Start-Process $out -Args "--install `"$env:ProgramFiles\AnyDesk`" --start-with-win --create-shortcuts --silent" -Wait
